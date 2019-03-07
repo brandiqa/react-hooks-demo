@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Container, Row, Col } from 'react-bootstrap';
+import CountdownClass from './components/countdown-class'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Container>
+          <Row>
+            <Col sm={12}><h1>Countdown Class Example</h1></Col>
+            <Col sm={12}><CountdownClass /></Col>
+          </Row>
+          <Row>
+            <Col sm={12}><h1>Countdown Hook Example</h1></Col>
+            <Col sm={12}><p>Todo</p></Col>
+          </Row>
+        </Container>
       </div>
     );
   }
