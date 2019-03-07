@@ -10,7 +10,7 @@ class App extends Component {
         <Container>
           <Row>
             <Col sm={12}><h1>Countdown Class Example</h1></Col>
-            <Col sm={12}><CountdownClass /></Col>
+            <Col sm={12}><CountdownClass date="March 17, 2019" /></Col>
           </Row>
           <Row>
             <Col sm={12}><h1>Countdown Hook Example</h1></Col>
