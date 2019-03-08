@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function HookDemo(props) {
   const [name, setName] = useState('Agata');
   const [location, setLocation] = useState('Nairobi');
+
+  useEffect(() => {
+    document.title = name + ' from ' + location;
+  })
 
   function handleNameChange(e) {
     setName(e.target.value);
