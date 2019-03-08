@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import CountdownClass from './components/countdown-class'
+import HookDemo from './components/hooks-demo';
 import './App.css';
 
 class App extends Component {
@@ -9,12 +9,8 @@ class App extends Component {
       <div className="App">
         <Container>
           <Row>
-            <Col sm={12}><h1>Countdown Class Example</h1></Col>
-            <Col sm={12}><CountdownClass date="March 17, 2019" /></Col>
-          </Row>
-          <Row>
-            <Col sm={12}><h1>Countdown Hook Example</h1></Col>
-            <Col sm={12}><p>Todo</p></Col>
+            <Col sm={12}><h1>Hook Demo</h1></Col>
+            <Col sm={12}><HookDemo /></Col>
           </Row>
         </Container>
       </div>

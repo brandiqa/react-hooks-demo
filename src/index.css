@@ -33,3 +33,15 @@ code {
 .Countdown-col-element strong {
   font-size: 2rem;
 }
+
+label {
+  width: 15%;
+}
+
+input {
+  border-radius: 4px;
+}
+
+form {
+  margin-bottom: 30px;
+}
