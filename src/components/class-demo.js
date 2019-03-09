@@ -5,14 +5,37 @@ export default class ClassDemo extends React.Component {
     super(props);
     this.state = {
       name: "Agata",
-      location: "Nairobi"
+      location: "Nairobi",
+      resolution: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleResize = this.handleResize.bind(this);
   }
 
   componentDidMount() {
     document.title = this.state.name + " from " + this.state.location;
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentDidUpdate() {
+    document.title = this.state.name + " from " + this.state.location;
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  handleResize() {
+    this.setState({
+      resolution: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    });
   }
 
   handleNameChange(e) {
@@ -55,6 +78,9 @@ export default class ClassDemo extends React.Component {
         <p>
           Hello {this.state.name} from {this.state.location}
         </p>
+        <h3>
+          {this.state.resolution.width} x {this.state.resolution.height}
+        </h3>
       </section>
     );
   }
