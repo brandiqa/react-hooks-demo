@@ -8,6 +8,14 @@ export default function HookDemo(props) {
     height: window.innerHeight
   });
 
+  function handleNameChange(e) {
+    setName(e.target.value);
+  }
+
+  function handleLocationChange(e) {
+    setLocation(e.target.value);
+  }
+
   useEffect(() => {
     document.title = name + " from " + location;
   });
@@ -25,17 +33,9 @@ export default function HookDemo(props) {
     };
   });
 
-  function handleNameChange(e) {
-    setName(e.target.value);
-  }
-
-  function handleLocationChange(e) {
-    setLocation(e.target.value);
-  }
-
   return (
     <section>
-      <form>
+      <form autocomplete="off">
         <section>
           <label htmlFor="name">Name</label>
           <input

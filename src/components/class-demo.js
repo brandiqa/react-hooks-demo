@@ -23,19 +23,7 @@ export default class ClassDemo extends React.Component {
 
   componentDidUpdate() {
     document.title = this.state.name + " from " + this.state.location;
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
-  }
-
-  handleResize() {
-    this.setState({
-      resolution: {
-        width: window.innerWidth,
-        height: window.innerHeight
-      }
-    });
+    window.addEventListener("resize", this.handleResize);
   }
 
   handleNameChange(e) {
@@ -50,10 +38,19 @@ export default class ClassDemo extends React.Component {
     });
   }
 
+  handleResize() {
+    this.setState({
+      resolution: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    });
+  }
+
   render() {
     return (
       <section>
-        <form>
+        <form autocomplete="off">
           <section>
             <label htmlFor="name">Name</label>
             <input
