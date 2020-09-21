@@ -49,9 +49,10 @@ export default class ClassDemo extends React.Component {
 
   render() {
     return (
-      <section>
+      <div className="component">
+        <h1>Class Demo</h1>
         <form autocomplete="off">
-          <section>
+          <div className="field">
             <label htmlFor="name">Name</label>
             <input
               type="text"
@@ -60,8 +61,8 @@ export default class ClassDemo extends React.Component {
               value={this.state.name}
               onChange={this.handleNameChange}
             />
-          </section>
-          <section>
+          </div>
+          <div className="field">
             <label htmlFor="location">Location</label>
             <input
               type="text"
@@ -70,15 +71,15 @@ export default class ClassDemo extends React.Component {
               value={this.state.location}
               onChange={this.handleLocationChange}
             />
-          </section>
+          </div>
         </form>
-        <p>
+        <p className="text-output">
           Hello {this.state.name} from {this.state.location}
         </p>
-        <h3>
+        <p className="resolution-output">
           {this.state.resolution.width} x {this.state.resolution.height}
-        </h3>
-      </section>
+        </p>
+      </div>
     );
   }
 }

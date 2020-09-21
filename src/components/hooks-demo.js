@@ -7,24 +7,25 @@ export default function HookDemo(props) {
   useDocumentTitle(name.value + " from " + location.value);
 
   return (
-    <section>
+    <div className="component">
+      <h1>Hook Demo</h1>
       <form autoComplete="off">
-        <section>
+        <div className="field">
           <label htmlFor="name">Name</label>
           <input {...name} />
-        </section>
-        <section>
+        </div>
+        <div className="field">
           <label htmlFor="location">Location</label>
           <input {...location} />
-        </section>
+        </div>
       </form>
-      <p>
+      <p className="text-output">
         Hello {name.value} from {location.value}
       </p>
-      <h3>
+      <p className="resolution-output">
         {resolution.width} x {resolution.height}
-      </h3>
-    </section>
+      </p>
+    </div>
   );
 }
 
