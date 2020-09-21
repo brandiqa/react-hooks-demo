@@ -3,22 +3,18 @@ import PropTypes from 'prop-types';
 
 class CountdownClass extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      days: 0,
-      hours: 0,
-      min: 0,
-      sec: 0,
-    }
+  state = {
+    days: 0,
+    hours: 0,
+    min: 0,
+    sec: 0,
   }
 
   componentDidMount() {
     // update every second
     this.interval = setInterval(() => {
-      const date = this.calculateCountdown(this.props.date);
-      date ? this.setState(date) : this.stop();
+      const timeLeftDate = this.calculateCountdown(this.props.futureDate);
+      timeLeftDate ? this.setState(timeLeftDate) : this.stop();
     }, 1000);
   }
 
@@ -75,50 +71,71 @@ class CountdownClass extends Component {
     return value;
   }
 
-  propTypes = {
-    date: PropTypes.string.isRequired
-  };
-
-  defaultProps = {
-    date: new Date()
-  };
-
   render() {
     const countDown = this.state;
 
     return (
-      <div className="Countdown" >
-        <span className="Countdown-col">
-          <span className="Countdown-col-element">
-            <strong>{this.addLeadingZeros(countDown.days)}</strong>
-            <span>{countDown.days === 1 ? 'Day' : 'Days'}</span>
-          </span>
-        </span>
+      <div className="component">
+        <h1>Countdown</h1>
+        <div className="countdown">
+          <div className="col">
+            <span className="value">{this.addLeadingZeros(countDown.days)}</span>
+            <span className="label">{countDown.days === 1 ? 'Day' : 'Days'}</span>
+          </div>
+          <div className="col">
+            <span className="value">{this.addLeadingZeros(countDown.hours)}</span>
+            <span className="label">Hours</span>
+          </div>
+          <div className="col">
+            <span className="value">{this.addLeadingZeros(countDown.min)}</span>
+            <span className="label">Min</span>
+          </div>
+          <div className="col">
+            <span className="value">{this.addLeadingZeros(countDown.sec)}</span>
+            <span className="label">Sec</span>
+          </div>
+      </div>
+      </div>
+      // <div className="Countdown" >
+      //   <span className="Countdown-col">
+      //     <span className="Countdown-col-element">
+      //       <strong>{this.addLeadingZeros(countDown.days)}</strong>
+      //       <span>{countDown.days === 1 ? 'Day' : 'Days'}</span>
+      //     </span>
+      //   </span>
 
-        <span className="Countdown-col">
-          <span className="Countdown-col-element">
-            <strong>{this.addLeadingZeros(countDown.hours)}</strong>
-            <span>Hours</span>
-          </span>
-        </span>
+      //   <span className="Countdown-col">
+      //     <span className="Countdown-col-element">
+      //       <strong>{this.addLeadingZeros(countDown.hours)}</strong>
+      //       <span>Hours</span>
+      //     </span>
+      //   </span>
 
 
-        <span className="Countdown-col">
-          <span className="Countdown-col-element">
-            <strong>{this.addLeadingZeros(countDown.min)}</strong>
-            <span>Min</span>
-          </span>
-        </span>
+      //   <span className="Countdown-col">
+      //     <span className="Countdown-col-element">
+      //       <strong>{this.addLeadingZeros(countDown.min)}</strong>
+      //       <span>Min</span>
+      //     </span>
+      //   </span>
 
-        <span className="Countdown-col">
-          <span className="Countdown-col-element">
-            <strong>{this.addLeadingZeros(countDown.sec)}</strong>
-            <span>Sec</span>
-          </span>
-        </span>
-      </div >
+      //   <span className="Countdown-col">
+      //     <span className="Countdown-col-element">
+      //       <strong>{this.addLeadingZeros(countDown.sec)}</strong>
+      //       <span>Sec</span>
+      //     </span>
+      //   </span>
+      // </div >
     )
   }
 }
+
+CountdownClass.propTypes = {
+  futureDate: PropTypes.instanceOf(Date)
+};
+
+ CountdownClass.defaultProps = {
+  futureDate: new Date(Date.now() + 1000 /*sec*/ * 60 /*min*/ * 60 /*hour*/ * 24 /*day*/ * 365)
+};
 
 export default CountdownClass
