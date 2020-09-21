@@ -1,3 +1,26 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+/* label {
+  width: 15%;
+}
+
+input {
+  border-radius: 4px;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+
 .App .row {
   margin-top: 50px;
 }
@@ -6,6 +29,23 @@
   margin-top: 150px;
 }
 
-h1 {
-  font-size: 1.8rem;
+.Countdown {
+  margin: 10px auto;
+  padding-bottom: 20px;
 }
+
+.Countdown-col {
+  display: inline-block;
+}
+
+.Countdown-col-element {
+  display: inline-block;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Countdown-col-element strong {
+  font-size: 2rem;
+} */
