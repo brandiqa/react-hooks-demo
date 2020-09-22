@@ -4,12 +4,10 @@ import React, { Component } from 'react';
 import UserList from './components/user-list';
 // import CountdownClass from "./components/countdown-class";
 
-import './App.css';
-
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container mx-auto">
         {/* <ClassDemo /> */}
         {/* <HookDemo /> */}
         <UserList />

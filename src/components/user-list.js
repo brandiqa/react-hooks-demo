@@ -15,9 +15,9 @@ export default function UserList() {
   const userRows = users.map(user => <li>{user.name}</li>);
 
   return (
-    <div className="component">
+    <div>
       <h1>List of Users</h1>
-      <ul>{userRows}</ul>
+      <ul className="list-disc mt-4 ml-8">{userRows}</ul>
     </div>
   );
 }
