@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class CountdownClass extends Component {
-
   state = {
     days: 0,
     hours: 0,
     min: 0,
     sec: 0,
-  }
+  };
 
   componentDidMount() {
     // update every second
@@ -38,15 +37,18 @@ class CountdownClass extends Component {
     };
 
     // calculate time difference between now and expected date
-    if (diff >= (365.25 * 86400)) { // 365.25 * 24 * 60 * 60
+    if (diff >= 365.25 * 86400) {
+      // 365.25 * 24 * 60 * 60
       timeLeft.years = Math.floor(diff / (365.25 * 86400));
       diff -= timeLeft.years * 365.25 * 86400;
     }
-    if (diff >= 86400) { // 24 * 60 * 60
+    if (diff >= 86400) {
+      // 24 * 60 * 60
       timeLeft.days = Math.floor(diff / 86400);
       diff -= timeLeft.days * 86400;
     }
-    if (diff >= 3600) { // 60 * 60
+    if (diff >= 3600) {
+      // 60 * 60
       timeLeft.hours = Math.floor(diff / 3600);
       diff -= timeLeft.hours * 3600;
     }
@@ -79,11 +81,17 @@ class CountdownClass extends Component {
         <h1>Countdown</h1>
         <div className="countdown">
           <div className="col">
-            <span className="value">{this.addLeadingZeros(countDown.days)}</span>
-            <span className="label">{countDown.days === 1 ? 'Day' : 'Days'}</span>
+            <span className="value">
+              {this.addLeadingZeros(countDown.days)}
+            </span>
+            <span className="label">
+              {countDown.days === 1 ? 'Day' : 'Days'}
+            </span>
           </div>
           <div className="col">
-            <span className="value">{this.addLeadingZeros(countDown.hours)}</span>
+            <span className="value">
+              {this.addLeadingZeros(countDown.hours)}
+            </span>
             <span className="label">Hours</span>
           </div>
           <div className="col">
@@ -94,7 +102,7 @@ class CountdownClass extends Component {
             <span className="value">{this.addLeadingZeros(countDown.sec)}</span>
             <span className="label">Sec</span>
           </div>
-      </div>
+        </div>
       </div>
       // <div className="Countdown" >
       //   <span className="Countdown-col">
@@ -111,7 +119,6 @@ class CountdownClass extends Component {
       //     </span>
       //   </span>
 
-
       //   <span className="Countdown-col">
       //     <span className="Countdown-col-element">
       //       <strong>{this.addLeadingZeros(countDown.min)}</strong>
@@ -126,16 +133,18 @@ class CountdownClass extends Component {
       //     </span>
       //   </span>
       // </div >
-    )
+    );
   }
 }
 
 CountdownClass.propTypes = {
-  futureDate: PropTypes.instanceOf(Date)
+  futureDate: PropTypes.instanceOf(Date),
 };
 
- CountdownClass.defaultProps = {
-  futureDate: new Date(Date.now() + 1000 /*sec*/ * 60 /*min*/ * 60 /*hour*/ * 24 /*day*/ * 365)
+CountdownClass.defaultProps = {
+  futureDate: new Date(
+    Date.now() + 1000 /*sec*/ * 60 /*min*/ * 60 /*hour*/ * 24 /*day*/ * 365
+  ),
 };
 
-export default CountdownClass
+export default CountdownClass;

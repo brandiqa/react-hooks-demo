@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
 export default class ClassDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Agata",
-      location: "Nairobi",
+      name: 'Agata',
+      location: 'Nairobi',
       resolution: {
         width: window.innerWidth,
-        height: window.innerHeight
-      }
+        height: window.innerHeight,
+      },
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
@@ -17,24 +17,24 @@ export default class ClassDemo extends React.Component {
   }
 
   componentDidMount() {
-    document.title = this.state.name + " from " + this.state.location;
-    window.addEventListener("resize", this.handleResize);
+    document.title = this.state.name + ' from ' + this.state.location;
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentDidUpdate() {
-    document.title = this.state.name + " from " + this.state.location;
-    window.addEventListener("resize", this.handleResize);
+    document.title = this.state.name + ' from ' + this.state.location;
+    window.addEventListener('resize', this.handleResize);
   }
 
   handleNameChange(e) {
     this.setState({
-      name: e.target.value
+      name: e.target.value,
     });
   }
 
   handleLocationChange(e) {
     this.setState({
-      location: e.target.value
+      location: e.target.value,
     });
   }
 
@@ -42,8 +42,8 @@ export default class ClassDemo extends React.Component {
     this.setState({
       resolution: {
         width: window.innerWidth,
-        height: window.innerHeight
-      }
+        height: window.innerHeight,
+      },
     });
   }
 

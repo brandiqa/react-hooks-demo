@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 export default function HookDemo(props) {
-  const name = useFormInput("Agata");
-  const location = useFormInput("Nairobi");
+  const name = useFormInput('Agata');
+  const location = useFormInput('Nairobi');
   const resolution = useWindowResolution();
-  useDocumentTitle(name.value + " from " + location.value);
+  useDocumentTitle(name.value + ' from ' + location.value);
 
   return (
     <div className="component">
@@ -44,7 +44,7 @@ function useFormInput(initialValue) {
 
   return {
     value,
-    onChange: handleChange
+    onChange: handleChange,
   };
 }
 
@@ -56,13 +56,13 @@ function useWindowResolution() {
       setWidth(window.innerWidth);
       setHeight(window.innerHeight);
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize ", handleResize, true);
+      window.removeEventListener('resize ', handleResize, true);
     };
   }, [width, height]);
   return {
     width,
-    height
+    height,
   };
 }

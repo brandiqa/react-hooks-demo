@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function UserList() {
@@ -6,25 +6,18 @@ export default function UserList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
-        'https://jsonplaceholder.typicode.com/users',
-      );
+      const result = await axios('https://jsonplaceholder.typicode.com/users');
       setUsers(result.data);
     };
     fetchData();
   }, []);
 
-  const userRows = users.map((user) => (
-    <li>{user.name}</li>
-  ))
+  const userRows = users.map(user => <li>{user.name}</li>);
 
   return (
     <div className="component">
       <h1>List of Users</h1>
-      <ul>
-        { userRows }
-      </ul>
+      <ul>{userRows}</ul>
     </div>
-  )
-
+  );
 }
