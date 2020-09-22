@@ -10,19 +10,19 @@ import CountdownClass from './components/countdown-class';
 export default function App() {
   const links = [
     {
-      name: 'Class Demo',
+      name: 'Class',
       path: '/',
     },
     {
-      name: 'Hook Demo',
+      name: 'Hook',
       path: '/hook-demo',
     },
     {
-      name: 'List Users',
+      name: 'Users',
       path: '/list-users',
     },
     {
-      name: 'Countdown Class',
+      name: 'Countdown',
       path: '/countdown-class',
     },
   ];

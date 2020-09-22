@@ -9,3 +9,85 @@ body {
 h1 {
   @apply text-3xl font-bold text-gray-900 uppercase tracking-wide;
 }
+
+p {
+  margin: 16px 0;
+}
+
+.component {
+  margin: 0 8px;
+  max-width: 400px;
+}
+
+.text-output {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.resolution-output {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+form {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  appearance: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  color: #4a5568;
+  line-height: 1.25;
+  border: solid 1px #ddd;
+  background-color: rgb(234, 240, 243);
+  margin-top: 2px;
+}
+
+input:focus {
+  outline: 0;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+  background-color: #fff;
+}
+
+.countdown {
+  display: flex;
+}
+
+.col {
+  margin-right: 0.75rem;
+  border: 2px solid #718096;
+  border-radius: 8px;
+  padding: 4px;
+  width: 6rem;
+  text-align: center;
+}
+
+.col > span {
+  display: block;
+}
+
+.col > .value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2d3748;
+}
+
+.col > .label {
+  font-weight: 600;
+  color: #4a5568;
+}

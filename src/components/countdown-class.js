@@ -79,7 +79,7 @@ class CountdownClass extends Component {
     return (
       <div className="component">
         <h1>Countdown</h1>
-        <div className="countdown">
+        <div className="countdown mt-4">
           <div className="col">
             <span className="value">
               {this.addLeadingZeros(countDown.days)}
