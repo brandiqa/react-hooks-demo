@@ -58,7 +58,8 @@ function useWindowResolution() {
     };
     window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize ', handleResize, true);
+      document.title = 'React Hooks Demo';
+      window.removeEventListener('resize', handleResize);
     };
   }, [width, height]);
   return {

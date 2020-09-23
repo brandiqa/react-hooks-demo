@@ -26,6 +26,11 @@ export default class ClassDemo extends React.Component {
     window.addEventListener('resize', this.handleResize);
   }
 
+  componentWillUnmount() {
+    document.title = 'React Hooks Demo';
+    window.removeEventListener('resize', this.handleResize);
+  }
+
   handleNameChange(e) {
     this.setState({
       name: e.target.value,
@@ -51,7 +56,7 @@ export default class ClassDemo extends React.Component {
     return (
       <div className="component">
         <h1>Class Demo</h1>
-        <form autocomplete="off">
+        <form autoComplete="off">
           <div className="field">
             <label htmlFor="name">Name</label>
             <input
