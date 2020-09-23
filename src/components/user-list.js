@@ -12,7 +12,7 @@ export default function UserList() {
     fetchData();
   }, []);
 
-  const userRows = users.map(user => <li>{user.name}</li>);
+  const userRows = users.map((user, index) => <li key={index}>{user.name}</li>);
 
   return (
     <div className="component">
